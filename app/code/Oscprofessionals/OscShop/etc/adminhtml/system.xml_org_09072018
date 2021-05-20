@@ -1,0 +1,87 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2016 Oscprofessionals® All Rights Reserved
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="oscprofessionals" translate="label" sortOrder="200">
+            <label>Oscprofessionals</label>
+        </tab>
+        <section id="oscshop"
+                 translate="label"
+                 type="text"
+                 sortOrder="100"
+                 showInDefault="1"
+                 showInWebsite="1"
+                 showInStore="1">
+            <label>OscShop</label>
+            <tab>oscprofessionals</tab>
+            <resource>Oscprofessionals_OscShop::configuration</resource>
+            <group id="oscshopsettings"
+                   translate="label"
+                   type="text"
+                   sortOrder="10"
+                   showInDefault="1"
+                   showInWebsite="1"
+                   showInStore="1">
+                <label>OscShop Settings</label>
+                <field id="is_enabled"
+                       translate="label"
+                       type="select"
+                       sortOrder="10"
+                       showInDefault="1"
+                       showInWebsite="1"
+                       showInStore="1">
+                    <label>Enable OscShop</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+            </group>
+
+            <!--<group id="email"-->
+                   <!--translate="label"-->
+                   <!--type="text"-->
+                   <!--sortOrder="20"-->
+                   <!--showInDefault="1"-->
+                   <!--showInWebsite="1"-->
+                   <!--showInStore="1">-->
+                <!--<label>Email Settings</label>-->
+                <!--<field id="email_template"-->
+                       <!--translate="label comment"-->
+                       <!--type="select"-->
+                       <!--sortOrder="10"-->
+                       <!--showInDefault="1"-->
+                       <!--showInWebsite="1"-->
+                       <!--showInStore="1">-->
+                    <!--<label>Email Template</label>-->
+                    <!--<source_model>Magento\Config\Model\Config\Source\Email\Template</source_model>-->
+                <!--</field>-->
+            <!--</group>-->
+            <group id="token_setting"
+                   translate="label"
+                   type="text"
+                   sortOrder="30"
+                   showInDefault="1"
+                   showInWebsite="1"
+                   showInStore="1">
+                <label>Token Settings</label>
+                <field id="api_token"
+                       translate="label comment"
+                       type="select"
+                       sortOrder="10"
+                       showInDefault="1"
+                       showInWebsite="1"
+                       showInStore="1">
+                    <label>API Token</label>
+                    <source_model>Oscprofessionals\OscShop\Model\Config\Source\Token</source_model>
+                    <tooltip>These are the tokens from Integration and here display only activated token name</tooltip>
+                </field>
+                <field id="listbutton" translate="label" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <frontend_model>Oscprofessionals\OscShop\Block\System\Config\Form\Button</frontend_model>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

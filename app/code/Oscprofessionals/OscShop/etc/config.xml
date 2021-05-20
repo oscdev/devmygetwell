@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2016 Oscprofessionals® All Rights Reserved
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <oscshop>
+            <oscshopsettings>
+                <is_enabled>1</is_enabled>
+                <enable_apitimelog>1</enable_apitimelog>
+            </oscshopsettings>
+            <email>
+                <email_template>oscshop_email_email_template</email_template>
+            </email>
+        </oscshop>
+    </default>
+</config>

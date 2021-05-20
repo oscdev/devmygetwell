@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+
+
+        <payment>
+            <multiple_payment>
+                <active>1</active>
+                <model>BoostMyShop\PointOfSales\Model\Payment\MultiplePayment</model>
+                <order_status>pending</order_status>
+                <title>Multiple payment</title>
+                <allowspecific>0</allowspecific>
+                <methods>cash,check,credit card,bank transfer</methods>
+                <change_method>cash</change_method>
+            </multiple_payment>
+        </payment>
+
+        <carriers>
+            <storepickup>
+                <active>1</active>
+                <model>BoostMyShop\PointOfSales\Model\Carrier\Storepickup</model>
+                <title>Store Pickup</title>
+            </storepickup>
+        </carriers>
+
+        <pointofsales>
+            <cash_drawer>
+                <enable_opening>1</enable_opening>
+                <method>cash</method>
+            </cash_drawer>
+            <checkout>
+                <shipping_method>storepickup_storepickup</shipping_method>
+                <payment_method>multiple_payment</payment_method>
+            </checkout>
+            <guest>
+                <firstname>Guest</firstname>
+                <lastname>Guest</lastname>
+                <email>guest@guest.com</email>
+                <city>n/a</city>
+                <street>n/a</street>
+                <region>n/a</region>
+                <postcode>n/a</postcode>
+                <telephone>n/a</telephone>
+            </guest>
+            <receipt>
+                <width>9</width>
+                <header>
+Please configure me
+in stores > configuration > Point of sales > receipt > header
+                </header>
+                <footer>
+                    Please configure me
+                    in stores > configuration > Point of sales > receipt > footer
+                </footer>
+            </receipt>
+        </pointofsales>
+
+    </default>
+</config>

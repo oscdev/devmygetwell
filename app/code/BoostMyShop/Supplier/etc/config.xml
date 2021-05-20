@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <supplier>
+            <order>
+                <email_identity>general</email_identity>
+                <email_template>supplier_order_email_template</email_template>
+            </order>
+            <order_product>
+                <default_price>product_supplier_association</default_price>
+                <extended_cost_method>quantity</extended_cost_method>
+                <update_cost>0</update_cost>
+                <require_product_supplier_association>0</require_product_supplier_association>
+            </order_product>
+        </supplier>
+    </default>
+</config>

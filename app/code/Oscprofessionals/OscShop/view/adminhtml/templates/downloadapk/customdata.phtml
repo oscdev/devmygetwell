@@ -1,0 +1,42 @@
+<script>
+    function processStart(){
+        //
+    }
+
+    function processEnd(data){
+        //
+    }
+
+
+    var appConfig = {
+        domain: 'http://49.248.5.148/magento/new/MagentoCart',
+        apiLocation: 'http://49.248.5.147/development/oscm2cart-207/oscshop/index/index/storeid/default/::',
+        moduleName: 'oscM2cart',
+        moduleVersion: '1.7',
+        framework: 'android/ios',
+        organizationName: 'oscp',
+        email: 'a@b.com',
+        countryCode: 'IN',
+        adminFirstName: 'osc',
+        adminLastName: 'osc',
+        callBack: {
+            processStart: processStart,
+            processEnd: processEnd,
+        }
+    };
+
+window.onload = function() {
+  (function (url, container, options) {
+        s = document.createElement("script");
+        s.src = url;
+        fNode = document.getElementsByTagName("script")[0];
+        fNode.parentNode.insertBefore(s, fNode);
+        ((s.readyState) && (s.readyState == "loaded" || s.readyState == "complete")) ? s.onreadystatechange = function () { portal.init(container, options) } : s.onload = function () { portal.init(container, options) };
+    })("//192.168.0.220/app-automation/app_portal/libraries/portalMain.js", "#oscpFormLayout", appConfig);
+}
+
+	
+	
+</script>
+
+<div id="oscpFormLayout"></div>

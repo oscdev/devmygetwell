@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../Backend/etc/menu.xsd">
+    <menu>
+        <add id="BoostMyShop_PointOfSales::operations" title="Point of Sales" module="BoostMyShop_PointOfSales" sortOrder="10" parent="Magento_Sales::sales" resource="BoostMyShop_PointOfSales::main"/>
+        <add id="BoostMyShop_PointOfSales::checkout" title="Checkout" module="BoostMyShop_PointOfSales" sortOrder="10" parent="BoostMyShop_PointOfSales::operations" action="pointofsales/main" resource="BoostMyShop_PointOfSales::checkout"/>
+        <add id="BoostMyShop_PointOfSales::configuration" title="Configuration" module="BoostMyShop_PointOfSales" sortOrder="20" parent="BoostMyShop_PointOfSales::operations" action="pointofsales/configuration" resource="BoostMyShop_PointOfSales::configuration"/>
+    </menu>
+</config>

@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Callback
+ * 
+ * @author Oscprofessionals
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+	<default>		
+		<oscprofessionals_franchiseenquiry_configuration>
+			<general>
+				<enable>1</enable>
+			</general>
+		</oscprofessionals_franchiseenquiry_configuration>
+		<customer>
+			<captcha>
+				<shown_to_logged_in_user>
+					<franchise_enquiry_form>1</franchise_enquiry_form>
+				</shown_to_logged_in_user>
+				<always_for>
+					<franchise_enquiry_form>1</franchise_enquiry_form>
+				</always_for>
+			</captcha>
+		</customer>
+		<captcha translate="label">
+			<frontend>
+				<areas>
+					<franchise_enquiry_form>
+						<label>Franchise Enquiry Form</label>
+					</franchise_enquiry_form>
+				</areas>
+			</frontend>
+		</captcha>
+	</default>
+</config>

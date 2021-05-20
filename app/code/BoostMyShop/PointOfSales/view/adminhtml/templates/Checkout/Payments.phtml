@@ -1,0 +1,70 @@
+<!--
+<div class="pos_bottom_zone" onclick="objPosCheckout.showPaymentMethodsPopup();">
+    <div id="pos_payment_method"></div>
+    <div id="pos_payment_settings"></div>
+</div>
+-->
+
+<div id="payment_method_popup" style="display:none;">
+
+    <div class="page-main-actions">
+        <div data-mage-init='{"floatingHeader": {}}' class="page-actions"  data-ui-id="page-actions-toolbar-content-header" >
+            <button id="save" title="save" type="button" class="action-default scalable primary" onclick="objPosCheckout.commit();"  data-ui-id="adminhtml-order-edit-save-button" >
+                <span><?php echo __('Create order'); ?></span>
+            </button>
+
+            <div style="align-content: center; display: inline-block; margin-right: 20px;">
+                <input type="checkbox" style="display: none;" id="pos_create_invoice" name="pos_create_invoice" checked="<?php echo ($this->invoiceByDefault() ? 'checked' : ''); ?>">
+                <div style="margin: auto" class="<?php echo ($this->invoiceByDefault() ? 'switch-toggle-on' : 'switch-toggle-off'); ?>" data-action="switch-toggle" data-checkbox-id="pos_create_invoice"></div>
+                <?php echo __('Create invoice'); ?>
+            </div>
+
+            <div style="align-content: center; display: inline-block; margin-right: 20px;">
+                <input type="checkbox" style="display: none;" id="pos_create_shipment" name="pos_create_shipment" checked="<?php echo ($this->shipmentByDefault() ? 'checked' : ''); ?>">
+                <div style="margin: auto" class="<?php echo ($this->shipmentByDefault() ? 'switch-toggle-on' : 'switch-toggle-off'); ?>" data-action="switch-toggle" data-checkbox-id="pos_create_shipment"></div>
+                <?php echo __('Create shipment'); ?>
+            </div>
+
+
+        </div>
+    </div>
+
+    <table border="0" width="100%" style="margin: 30px;">
+        <tr>
+            <td class="multiplepayment-total-cell"><?php echo __('Coupon code'); ?></td>
+            <td class="multiplepayment-total-cell"><?php echo __('Total due'); ?></td>
+            <td class="multiplepayment-total-cell"><?php echo __('Total paid'); ?></td>
+            <td class="multiplepayment-total-cell"><?php echo __('Balance'); ?></td>
+        </tr>
+        <tr>
+            <td class="multiplepayment-total-value">
+                <input type="text" value="" id="pos_coupon_code" style="width: 60%;">
+                <button id="apply" title="apply" type="button" class="action-default scalable primary" onclick="objPosCheckout.refreshQuote(false);" style="width: 40%;">
+                    <span>Apply</span>
+                </button>
+            </td>
+            <td class="multiplepayment-total-value" id="multiple_total_due">
+            </td>
+            <td class="multiplepayment-total-value" id="multiple_total_paid">
+            </td>
+            <td class="multiplepayment-total-value" id="multiple_total_balance">
+            </td>
+        </tr>
+    </table>
+
+    <table border="0" width="100%">
+        <tr>
+            <td width="50%" id="pos_payment_buttons" valign="top">
+
+            </td>
+            <td width="50%" id="pos_payment_forms" style="padding-top: 20px;" valign="top"></td>
+        </tr>
+    </table>
+
+</div>
+
+<!--
+<div id="div_payment_form">
+
+</div>
+-->

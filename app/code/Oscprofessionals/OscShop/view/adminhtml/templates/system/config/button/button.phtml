@@ -1,0 +1,24 @@
+<?php $_objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+$storeManager = $_objectManager->get('Magento\Store\Model\StoreManagerInterface');
+$currentStore = $storeManager->getStore();
+$baseUrl = $currentStore->getBaseUrl()."oscshop/index/index/storeid/default/::checkconnection";?>
+
+<div class="pp-buttons-container">
+
+    <a id="<?php echo $block->getId() ?>" href="<?php echo $baseUrl; ?>">
+        <span><span><span><?php echo $block->escapeHtml($block->getButtonLabel()); ?></span></span></span>
+    </a>
+</div>
+<?php
+    $param = $block->getRequest()->getParams();
+    $connection = '';
+    $connection = @$param['connection'];
+    if($connection != '') {
+?>
+
+<div class="status">
+    Connection is <?php echo $connection; ?>. For more information please check "check-connection.log" file on path "var/log/api-connection.log". If log file not generated, check your file permission.
+</div>
+<?php }?>
+
+

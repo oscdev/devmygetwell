@@ -1,0 +1,17 @@
+<script>
+
+    require(["pos_checkout"], function(){
+        objPosCheckout = new AdminPosCheckout();
+        objPosCheckout.configure('<?php echo $this->getRefreshUrl(); ?>',
+                                '<?php echo $this->getProductEmptyLayoutUrl(); ?>',
+                                '<?php echo $this->getSearchProductUrl(); ?>',
+                                '<?php echo $this->getCustomerInformationUrl(); ?>',
+                                '<?php echo $this->getCreateCustomerUrl(); ?>',
+                                '<?php echo $this->getChangeStoreUrl(); ?>',
+                                '<?php echo $this->getChangeUserUrl(); ?>',
+                                '<?php echo $this->getProductIdFromBarcodeUrl(); ?>',
+                                '<?php echo $this->getSaveOpeningUrl(); ?>'
+                                );
+    });
+
+</script>

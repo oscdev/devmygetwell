@@ -1,0 +1,14 @@
+<!--
+/**
+ * FranchiseEnquiry
+ * 
+ * @author Oscprofessionals
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../../../lib/internal/Magento/Framework/View/Layout/etc/page_configuration.xsd">
+	<body>
+		<referenceContainer name="header-wrapper">
+			<block class="Oscprofessionals\FranchiseEnquiry\Block\FranchiseEnquiry\Link" name="franchise.enquiry.link" as="franchise.enquiry.link" template="link.phtml" before="minicart"/>
+		</referenceContainer>
+	</body>
+</page>

@@ -1,0 +1,32 @@
+<?php
+foreach ($block->getDefaultPaypalValues() as $key => $value): ?>
+    <table style="display: block; width: 800px;">
+        <tr width="100%">
+            <th class="form-text" style="display: inline-block; width: 160px;"><?php echo 'Business Mail' ?></th>
+            <td style="display: inline-block; width: 600px;"><input type="text" width="270px" name="business_mail" value="<?php echo $value['business_mail'] ;?>" readonly/></td>
+        </tr>
+        <tr>
+            <th class="form-text" style="display: inline-block; width: 160px;"><?php echo 'REST API Client ID' ?></th>
+            <td style="display: inline-block; width: 600px;"><input width="270px" type="text" name="restapi_client_id" value="<?php echo $value['api_username']; ?>" readonly/></td>
+        </tr>
+        <tr>
+            <th class="form-text" style="display: inline-block; width: 160px;"><?php echo 'REST API SECRET KEY' ?></th>
+            <td style="display: inline-block; width: 600px;"><input width="270px" type="text" name="restapi_secret_id" value="<?php echo $value['api_signature']; ?>" readonly/></td>
+        </tr>
+        <tr>
+            <th class="form-text" style="display: inline-block; width: 160px;"><?php echo 'Mode' ?></th>
+            <td style="display: inline-block; width: 600px;"><select name="mode" readonly="/" width="270px">
+                    <option value="volvo">Test</option>
+                    <option value="saab">Live</option>
+                </select>
+            </td>
+        </tr>
+    </table>
+    <style>
+        .form-text{
+            padding-top: 4%;
+            text-align: left;
+        }
+    </style>
+<?php endforeach;?>
+

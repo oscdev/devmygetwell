@@ -1,0 +1,45 @@
+
+
+<div class="menu-wrapper _fixed">
+
+    <a
+        href="<?php echo $this->getMagentoUrl(); ?>"
+        data-edition="Community Edition" class="logo">
+        <img class="logo-img" src="<?php echo $this->getLogoSrc(); ?>"
+             alt="Magento Admin Panel"/>
+    </a>
+
+    <?php echo $this->getChildHtml('pointofsales.main.menu'); ?>
+
+</div>
+
+<div class="page-wrapper">
+
+    <?php echo $this->getChildHtml('pointofsales.main.header'); ?>
+
+    <main id="anchor-content" class="page-content">
+        <?php echo $this->getChildHtml('pointofsales.main.content'); ?>
+    </main>
+</div>
+
+<script>
+
+    require(["pos_ui"], function(){
+        objPosUi = new AdminPosUi();
+        objPosUi.showScreen('Checkout', '<?php echo $this->getCheckoutUrl(); ?>')
+    });
+
+    require(["pos_scanner"], function(){
+        objScanner = new AdminScanner();
+    });
+
+</script>
+
+<div id="pos_abstract_popup" style="display:none;">
+</div>
+
+<?php echo $this->getChildHtml('pointofsales.numerickeyboard'); ?>
+<?php echo $this->getChildHtml('pointofsales.checkout.js'); ?>
+
+<audio id="audio_nok" src="<?php echo $this->getViewFileUrl('BoostMyShop_PointOfSales::sound/wrong.mp3'); ?>" ></audio>
+<audio id="audio_ok" src="<?php echo $this->getViewFileUrl('BoostMyShop_PointOfSales::sound/correct.mp3'); ?>" ></audio>

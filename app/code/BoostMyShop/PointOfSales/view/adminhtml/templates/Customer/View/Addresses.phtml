@@ -1,0 +1,35 @@
+<p>&nbsp;</p>
+
+<div class="entry-edit form-inline">
+    <div class="fieldset-wrapper customer-information">
+        <div class="admin__fieldset-wrapper-title">
+            <span class="title"><?php echo __('Addresses'); ?></span>
+        </div>
+        <table width="100%">
+                <tr>
+                    <td width="50%">
+                        <p><strong><?php echo __('Billing Address'); ?></strong></p>
+
+                        <?php echo $this->getBillingAddress(); ?>
+
+                    </td>
+                    <td width="50%">
+                        <p><strong><?php echo __('Shipping Address'); ?></strong></p>
+
+                        <?php echo $this->getShippingAddress(); ?>
+
+                    </td>
+                </tr>
+        </table>
+    </div>
+</div>
+
+<p>&nbsp;</p>
+
+<div class="entry-edit form-inline">
+    <div class="fieldset-wrapper customer-information">
+        <div class="admin__fieldset-wrapper-title">
+            <span class="title"><?php echo __('Orders'); ?></span>
+        </div>
+    </div>
+</div>

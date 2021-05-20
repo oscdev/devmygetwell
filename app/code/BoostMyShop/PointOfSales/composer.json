@@ -1,0 +1,11 @@
+{
+  "name": "boostmyshop/module-point-of-sales",
+  "description": "Point of Sales for Magento 2",
+  "type": "magento2-module",
+  "version": "1.0.6",
+  "autoload": {
+    "files": [ "registration.php" ],
+    "psr-4": {
+      "BoostMyShop\\PointOfSales\\": ""}
+  }
+}

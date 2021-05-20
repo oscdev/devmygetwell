@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+        <!--
+        /**
+         * Copyright © 2016 Oscprofessionals® All Rights Reserved
+         */
+        -->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+<default>
+    <payment>
+        <oscppayment>
+            <active>1</active>
+            <title>OSCP Payment Method</title>
+            <order_status>pending_payment</order_status>
+            <payment_action>true</payment_action>
+            <group>offline</group>
+            <model>Oscprofessionals\PaymentPaypal\Model\PaymentMethod</model>
+        </oscppayment>
+    </payment>
+</default>
+</config>

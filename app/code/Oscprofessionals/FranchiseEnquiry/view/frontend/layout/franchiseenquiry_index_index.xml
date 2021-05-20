@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<page layout="2columns-right" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <title>Franchise Enquiry</title>
+        <css src="css/franchiseEnquiry.css" />
+    </head>
+    <body>
+        <referenceContainer name="content">
+            <block class="Magento\Cms\Block\Block" name="franchise-enquiry">
+                <arguments>
+                    <argument name="block_id" xsi:type="string">franchise-enquiry</argument>
+                </arguments>
+            </block>
+        </referenceContainer>
+        <referenceBlock name="head.components">
+            <block class="Magento\Framework\View\Element\Js\Components" name="captcha_page_head_components" template="Magento_Captcha::js/components.phtml"/>
+        </referenceBlock>
+        <!--<referenceBlock name="navigation.sections" remove="true" />-->
+        <referenceContainer name="sidebar.additional">
+            <referenceBlock name="product-sidebar" remove="true" />
+            <block class="Oscprofessionals\FranchiseEnquiry\Block\FranchiseEnquiry\Form" name="franchise.enquiry.form" template="Oscprofessionals_FranchiseEnquiry::form.phtml" >
+                <container name="form.additional.info" label="Form Additional Info">
+                    <block class="Magento\Captcha\Block\Captcha" name="captcha" after="-" cacheable="false">
+                        <action method="setFormId">
+                            <argument name="formId" xsi:type="string">franchise_enquiry_form</argument>
+                        </action>
+                        <action method="setImgWidth">
+                            <argument name="width" xsi:type="string">230</argument>
+                        </action>
+                        <action method="setImgHeight">
+                            <argument name="width" xsi:type="string">50</argument>
+                        </action>
+                    </block>
+                </container>
+            </block>
+        </referenceContainer>
+    </body>
+</page>

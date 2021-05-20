@@ -1,0 +1,26 @@
+<div style="clear: both;"></div>
+
+<p><?php echo $this->getResults()->getSize(); ?> products found</p>
+
+<?php if ($this->getResults()->getSize() > 0): ?>
+    <?php foreach($this->getResults() as $product): ?>
+
+        <div class="pos_product" <?php if ($product->getSellable()): ?>onclick="objPosCheckout.addProduct(<?php echo $product->getId(); ?>, 1); objPosCheckout.closeSearchProductPopup();"<?php endif; ?>>
+            <img src="<?php echo $this->getProductImage($product); ?>" class="pos_product_image">
+            <div class="pos_product_information">
+                <div class="pos_product_name"><?php echo $product->getName(); ?></div>
+                <div class="pos_product_sku"><?php echo $product->getSku(); ?></div>
+                <?php if ($product->getSellable()): ?>
+                    <div class="pos_product_stock">Stock: <?php echo $product->getQty(); ?></div>
+                <?php else: ?>
+                    <div class="pos_product_oos">This product is out of stock</div>
+                <?php endif; ?>
+
+                <div class="pos_product_price"><?php echo $this->formatPrice($product->getPrice()); ?></div>
+            </div>
+
+        </div>
+    <?php endforeach; ?>
+<?php else: ?>
+    <p>No results found</p>
+<?php endif; ?>

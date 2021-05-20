@@ -1,0 +1,29 @@
+<?php $values = $this->getValues(); ?>
+
+<h2>Totals</h2>
+<table class="data-grid" id="newstockmovement_grid_table">
+    <thead>
+        <tr>
+            <th class="data-grid-th  no-link col-cache_type"><span><?php echo __('Total'); ?></span></th>
+            <th class="data-grid-th  no-link col-cache_type"><span><?php echo __('Amount'); ?></span></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Sub Total</td>
+            <td align="right"><?php echo $this->formatCurrency($values['sub_total']); ?></td>
+        </tr>
+        <tr>
+            <td>Shipping</td>
+            <td align="right"><?php echo $this->formatCurrency($values['shipping']); ?></td>
+        </tr>
+        <tr>
+            <td>Taxes</td>
+            <td align="right"><?php echo $this->formatCurrency($values['taxes']); ?></td>
+        </tr>
+        <tr>
+            <td>Grand Total</td>
+            <td align="right"><?php echo $this->formatCurrency($values['grand_total']); ?></td>
+        </tr>
+    </tbody>
+</table>

@@ -1,0 +1,26 @@
+<!--@subject Apk Request From {{var data.getUserName()}} @-->
+<!--@vars {
+"var data.email":"Sender Email",
+"var data.user_name":"Sender Name"
+} @-->
+
+
+<h1>{{trans 'Apk Details' }}</h1>
+<br/>
+<ul>
+    <li><strong>{{trans "App Name:"}}</strong> {{var data.getAppName()}}</li>
+    <br/>
+    <li><strong>{{trans "Base Url:"}}</strong> {{var data.getBaseUrl()}}</li>
+    <br/>
+    <li><strong>{{trans "User Name:"}}</strong> {{var data.getUserName()}}</li>
+    <br/>
+    <li><strong>{{trans "Email:"}}</strong> {{var data.getEmail()}}</li>
+    <br/>
+    <li><strong>{{trans "Production Server Url:"}}</strong> {{var data.getProductionServerUrl()}}</li>
+    <br/>
+    <li><strong>{{trans "Development Server Url:"}}</strong> {{var data.getDevelopmentServerUrl()}}</li>
+    <br/>
+    <li><strong>{{trans "Token ID:"}}</strong> {{var data.getTokenId()}}</li>
+    <br/>
+    <li><strong>{{trans "Phone Number:"}}</strong> {{var data.getPhoneNumber()}}</li>
+</ul>

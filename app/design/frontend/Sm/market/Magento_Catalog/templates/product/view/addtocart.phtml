@@ -1,0 +1,134 @@
+<?php
+/**
+ * Copyright © 2016 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+// @codingStandardsIgnoreFile
+/** @var $block \Magento\Catalog\Block\Product\View */
+/** @var \Magento\Framework\Pricing\Price\PriceInterface $priceModel */
+/** @var \Magento\Framework\Pricing\Price\PriceInterface $finalPriceModel */
+?>
+<?php $_product = $block->getProduct(); ?>
+<?php $buttonTitle = __('Add to Cart'); ?>
+<?php
+$prodFinalPriceToDisplay = (int)$_product->getFinalPrice();
+$objectManager = Magento\Framework\App\ObjectManager::getInstance();
+$flatRateHandlingFee = $objectManager->get('Magento\Framework\App\Config\ScopeConfigInterface')->getValue('carriers/flatrate/handling_fee','website');
+$minOrderAmountConfig = $objectManager->get('Magento\Framework\App\Config\ScopeConfigInterface')->getValue('carriers/freeshipping/free_shipping_subtotal');
+$paymentCODPhoenix = $objectManager->get('Magento\Framework\App\Config\ScopeConfigInterface')->getValue('payment/phoenix_cashondelivery/inlandcosts','website');
+?>
+<?php if ($_product->isSaleable()): ?>
+<div class="box-tocart">
+    <div class="fieldset" style="margin: 0;">
+        <?php if ($block->shouldRenderQuantity()): ?>
+        <div class="field qty">
+            <label class="label" for="qty"><span><?php /* @escapeNotVerified */ echo __('Qty') ?></span></label>
+            <div class="control control-qty-cart">
+                <input type="number"
+                       name="qty"
+                       id="qty"
+                       maxlength="12"
+                       value="<?php /* @escapeNotVerified */ echo $block->getProductDefaultQty() * 1 ?>"
+                       title="<?php /* @escapeNotVerified */ echo __('Qty') ?>" class="qty-default input-text qty"
+                       data-validate="<?php echo $block->escapeHtml(json_encode($block->getQuantityValidators())) ?>"
+                       />
+					   
+				<div class="control-qty">
+					<span class="quantity-controls quantity-plus"></span>
+					<span class="quantity-controls quantity-minus"></span>
+
+					<script type="text/javascript">
+						require([
+							'jquery'
+						], function ($) {
+							$('.quantity-plus').click(function () {
+								$('.qty-default').val(Number($('.qty-default').val())+1);
+							});
+							
+							$('.quantity-minus').click(function () {
+								var value = Number($('.qty-default').val())-1;
+								if(value > 0){
+									$('.qty-default').val(value);
+								}
+								
+							});
+						});
+					</script>
+				</div>
+            </div>
+        </div>
+        <?php endif; ?>
+        <div class="actions">
+            <button type="submit"
+                    title="<?php /* @escapeNotVerified */ echo $buttonTitle ?>"
+                    class="action primary tocart"
+                    id="product-addtocart-button">
+                <span><?php /* @escapeNotVerified */ echo $buttonTitle ?></span>
+            </button>
+            <?php echo $block->getChildHtml('', true) ?>
+        </div>
+
+    </div>
+    <div class="static-content">
+        <br>
+        <?php
+        if ($prodFinalPriceToDisplay < $minOrderAmountConfig) {
+        ?>
+            <div style="display: block; font-size: 12px;">
+            <span style="display: block;">Shipping Charges Rs <?php echo $flatRateHandlingFee ?> Extra</span>
+            <span style="display: block;"><b>Order for Rs <?php echo $minOrderAmountConfig ?></b> & above to get <b> Free Shipping</b></span>
+            </div>
+        <?php
+        } else {
+        ?>
+          <div style="display: block; font-weight: bold; font-size: 12px;">
+                <span style="display: block;">Shipping - Free Delivery</span>
+          </div>
+        <?php
+        }
+        ?>
+        <br>
+      <!--  <span style="display: block;"><strong>COD Available </strong>- COD Charges Rs <?php /*echo $paymentCODPhoenix  */?> Extra</span>
+        <span style="display: block;">Pay Online and <strong>Save Rs <?php /*echo $paymentCODPhoenix  */?></strong> on Every Order</span>
+        <span style="display: block;"><strong>Online Payment Options:</strong> (Credit Card, Debit Card, Net Banking, Wallets)</span>
+        <span style="display: block;">Delivery in 2-8 working days.</span>-->
+
+    </div>
+</div>
+    <div style="clear:both;"></div>
+<?php endif; ?>
+<?php if (!$block->isRedirectToCartEnabled()) : ?>
+<script>
+    require([
+        'jquery',
+        'mage/mage',
+        'Magento_Catalog/product/view/validation',
+        'Magento_Catalog/js/catalog-add-to-cart'
+    ], function ($) {
+        'use strict';
+
+        $('#product_addtocart_form').mage('validation', {
+            radioCheckboxClosest: '.nested',
+            submitHandler: function (form) {
+                var widget = $(form).catalogAddToCart({
+                    bindSubmit: false
+                });
+
+                widget.catalogAddToCart('submitForm', $(form));
+
+                return false;
+            }
+        });
+    });
+</script>
+<?php else : ?>
+<script type="text/x-magento-init">
+    {
+        "#product_addtocart_form": {
+            "Magento_Catalog/product/view/validation": {
+                "radioCheckboxClosest": ".nested"
+            }
+        }
+    }
+</script>
+<?php endif; ?>

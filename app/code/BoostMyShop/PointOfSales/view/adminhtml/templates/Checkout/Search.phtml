@@ -1,0 +1,30 @@
+
+<div id="search_product_popup" class="pos-search" style="display:none;">
+    <div class="data-grid-search-control-wrap">
+        <label class="data-grid-search-label" for="data-grid-search" data-bind="attr: {title: $t('Search')}" title="Search">
+            <span data-bind="text: $t('Search')">Search</span>
+        </label>
+        <input id="pos_search_product_field"
+               class="admin__control-text data-grid-search-control"
+               onkeyup="objPosCheckout.displaySearchResults();"
+               data-bind="
+                        attr: {
+                            placeholder: placeholder
+                        },
+                        textInput: inputValue,
+                        keyboard: {
+                            13: apply,
+                            27: cancel
+                        }" type="text" placeholder="Search by keyword">
+        <button class="action-submit" type="button">
+            <span data-bind="i18n: 'Search'">Search</span>
+        </button>
+    </div>
+
+    <div class="clear"></div>
+
+    <div id="pos_search_results">
+
+    </div>
+</div>
+

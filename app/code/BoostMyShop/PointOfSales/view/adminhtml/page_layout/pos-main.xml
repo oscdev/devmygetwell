@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+
+<layout xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_layout.xsd">
+    <container name="pos-root">
+        <container name="after.body.start" as="after.body.start" label="Page Top" before="-"/>
+        <container name="page.formkey" as="page.formkey"/>
+        <container name="content" as="content"/>
+        <container name="js" as="js" label="JavaScript"/>
+    </container>
+    <container name="before.body.end" as="before_body_end" label="Before Body End" after="-"/>
+</layout>

@@ -1,0 +1,112 @@
+/**
+ * Copyright © 2015 Ihor Vansach (ihor@magefan.com). All rights reserved.
+ * See LICENSE.txt for license details (http://opensource.org/licenses/osl-3.0.php).
+ *
+ * Glory to Ukraine! Glory to the heroes!
+ */
+
+.blog-index-index .col2-layout .col-lg-9 , .blog-post-view .col-lg-9.col-md-9  {
+    width: 100%;
+}
+.blog-index-index .post-list {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 0;
+    list-style: none;
+    margin-left: -2%;
+}
+.blog-index-index .post-list .post-holder {
+    margin-bottom: 30px;
+    width: 47.8%;
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 2%;
+}
+.blog-index-index .post-list li:nth-child(2n) {
+    margin-right: 0;
+}
+.toolbar.toolbar-blog-posts {
+    border: medium none;
+}
+.blog-index-index .post-list .post-content .post-text-hld .read-more-post {
+  /*  border: 1px solid #000;*/
+    border-radius: 5px;
+    margin-bottom: 15px;
+    overflow: hidden;
+    padding: 10px;
+    text-align: left;
+    width: 25%;
+}
+.blog-index-index .post-list .post-content .post-text-hld .read-more-post .post-read-more::before {
+    border: 1px solid #95c141;
+    border-radius: 50%;
+    content: "";
+    display: inline-block;
+    font: 12px/1 FontAwesome;
+    margin-left: 2px;
+    padding: 2px 4px;
+    position: relative;
+    right: 0;
+    text-align: center;
+    transition: all 0.2s ease 0s;
+    color: #95c141;
+}
+.blog-index-index .post-list .post-content .post-text-hld .read-more-post .post-read-more::after {
+   display: none;
+}
+.post-list .image-featured-post .post-content .post-description .post-ftimg-hld {
+    float: none;
+    position: relative;
+    line-height: 0;
+    width: 100%;
+    overflow: hidden;
+}
+.post-list .image-featured-post .post-content .post-description .post-ftimg-hld a {
+    display: block;
+}
+.post-list .image-featured-post .post-content .post-description .post-ftimg-hld img {
+    width: 100%;
+}
+
+.blog-index-index .post-list .post-content .post-text-hld h2.post-title {
+    display: block;
+    font-weight: bold;
+    margin: 0 0 5px;
+    min-height: 65px;
+}
+.blog-index-index .post-list .post-content .post-content-desc {
+    margin-bottom: 20px;
+    min-height: 300px;
+    text-align: justify;
+}
+.blog-index-index .post-list .image-featured-post .post-content .post-text-hld {
+    margin-left: 0;	
+	    padding-top: 15px;
+}
+
+.blog-index-index .post-list .image-featured-post .post-ftimg-hld .date-post {
+    display: none;
+}
+
+@media screen and (max-width: 1200px) {
+    .blog-index-index .post-list .post-content .post-content-desc {
+        margin-bottom: 20px;
+        min-height: 353px;
+    }
+    .blog-index-index .post-list .post-content .post-text-hld .read-more-post {
+        width: 30%;
+    }
+}
+@media screen and (max-width: 991px) {
+    .blog-index-index .post-list .post-holder {
+       width: 99%;
+    }
+    .blog-index-index .post-list .post-content .post-content-desc {
+        min-height: auto;
+    }
+}
+@media screen and (max-width: 460px) {
+    .blog-index-index .post-list .post-content .post-text-hld .read-more-post {
+        width: 42%;
+    }
+}

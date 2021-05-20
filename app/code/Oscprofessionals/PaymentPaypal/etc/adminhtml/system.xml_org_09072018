@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2016 Oscprofessionals® All Rights Reserved
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <!--<tab id="oscprofessionals" translate="label" sortOrder="200">
+            <label>Oscprofessionals</label>
+        </tab>
+        <section id="oscppaypal"
+                 translate="label"
+                 type="text"
+                 sortOrder="200"
+                 showInDefault="1"
+                 showInWebsite="1"
+                 showInStore="1">
+            <label>Paypal</label>
+            <tab>oscprofessionals</tab>
+            <resource>Oscprofessionals_PaymentPaypal::oscppaypal</resource>
+            <group id="paypalsettings"
+                   translate="label"
+                   type="text"
+                   sortOrder="10"
+                   showInDefault="1"
+                   showInWebsite="1"
+                   showInStore="1">
+                <label>Paypal Settings</label>
+                <field id="business_mail"
+                       translate="label"
+                       type="text"
+                       sortOrder="10"
+                       showInDefault="1"
+                       showInWebsite="1"
+                       showInStore="1">
+                    <label/>
+                    <frontend_model>Oscprofessionals\PaymentPaypal\Block\Adminhtml\System\Config\Select</frontend_model>
+                </field>
+                </group>
+        </section>-->
+    <section id="payment">
+        <group id="oscppayment" translate="label" type="text" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>OSCP Payment Method</label>
+            <field id="active" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                <label>Enabled</label>
+                <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+            </field>
+            <field id="title" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                <label>Title</label>
+            </field>
+            <field id="business_mail" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Business mail </label>
+            </field>
+            <field id="rest_api_client_id" translate="label" type="text" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>REST API Client ID</label>
+            </field>
+            <field id="rest_api_secret_key" translate="label" type="text" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>REST API SECRET KEY</label>
+            </field>
+            <field id="mode" translate="label" type="select" sortOrder="70" showInDefault="1" showInWebsite="1" showInStore="0" canRestore="1">
+                <label>Mode</label>
+                <source_model>Oscprofessionals\PaymentPaypal\Model\Source\Mode</source_model>
+            </field>
+        </group>
+    </section>
+    </system>
+</config>

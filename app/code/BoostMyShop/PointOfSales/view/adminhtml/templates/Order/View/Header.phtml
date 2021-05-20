@@ -1,0 +1,19 @@
+<div class="page-main-actions">
+    <div data-mage-init='{"floatingHeader": {}}' class="page-actions"  data-ui-id="page-actions-toolbar-content-header" >
+
+        <?php if ($this->hasInvoice()): ?>
+            <button id="save" title="save" type="button" class="action-default scalable primary" onclick="document.location.href='<?php echo $this->getInvoiceUrl(); ?>';"  data-ui-id="adminhtml-order-edit-save-button" >
+                <span><?php echo __('Download invoice'); ?></span>
+            </button>
+        <?php endif; ?>
+        <button id="save" title="save" type="button" class="action-default scalable primary" onclick="document.location.href='<?php echo $this->getReceiptUrl(); ?>';"  data-ui-id="adminhtml-order-edit-save-button" >
+            <span><?php echo __('Download receipt'); ?></span>
+        </button>
+    </div>
+</div>
+
+<?php if ($this->downloadReceiptRequired()): ?>
+    <script>
+        document.location.href = '<?php echo $this->getReceiptUrl(); ?>';
+    </script>
+<?php endif; ?>

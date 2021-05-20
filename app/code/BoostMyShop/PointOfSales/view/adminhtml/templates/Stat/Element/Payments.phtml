@@ -1,0 +1,28 @@
+<?php $items = $this->getItems(); ?>
+
+<h2>Payments</h2>
+<table class="data-grid" id="newstockmovement_grid_table">
+    <thead>
+    <tr>
+        <th class="data-grid-th  no-link col-cache_type"><span><?php echo __('Method'); ?></span></th>
+        <th class="data-grid-th  no-link col-cache_type"><span><?php echo __('Total'); ?></span></th>
+    </tr>
+    </thead>
+    <tbody>
+        <?php if ($this->getOpeningValue() > 0): ?>
+            <tr>
+                <td>
+                    <?php echo __('Opening'); ?>
+                    <img src="<?php echo $this->getViewFileUrl('BoostMyShop_PointOfSales::images/pencil.png'); ?>" style="height: 16px; width: 16px;;" onclick="objPosCheckout.showOpeningPopup();">
+                </td>
+                <td id="stat_payment_opening"><?php echo $this->formatCurrency($this->getOpeningValue()); ?></td>
+            </tr>
+        <?php endif; ?>
+        <?php foreach($items as $item): ?>
+            <tr>
+                <td><?php echo $item['method']; ?></td>
+                <td><?php echo $this->formatCurrency($item['total']); ?></td>
+            </tr>
+        <?php endforeach; ?>
+    </tbody>
+</table>

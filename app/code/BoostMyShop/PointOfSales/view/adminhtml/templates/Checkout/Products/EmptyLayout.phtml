@@ -1,0 +1,22 @@
+<div id="product_{id}" class="pos_product" onclick="objPosCheckout.showEditProductPopup({id});">
+    <img src="{image_url}" class="pos_product_image">
+    <div class="pos_product_information">
+        <div class="pos_product_name">{name}</div>
+        <div class="pos_product_sku">{sku}</div>
+    </div>
+
+    <div class="pos_product_checkout_details">
+
+        <div class="pos_product_quantity_container">
+            <span id="product_{id}_qty" class="pos_product_qty">{qty}</span>
+        </div>
+
+        <div id="product_{id}_price" class="pos_product_price">{price}</div>
+
+    </div>
+
+    <button class="pos_product_remove" onclick="objPosCheckout.removeProduct({id});">
+        <span>X</span>
+    </button>
+
+</div>

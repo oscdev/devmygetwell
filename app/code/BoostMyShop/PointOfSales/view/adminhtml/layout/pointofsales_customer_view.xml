@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="pos-empty" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="content">
+            <block class="BoostMyShop\PointOfSales\Block\Customer\View\Information" name="customer_view_information" template="Customer/View/Information.phtml" />
+            <block class="BoostMyShop\PointOfSales\Block\Customer\View\Addresses" name="customer_view_addresses" template="Customer/View/Addresses.phtml" />
+            <block class="BoostMyShop\PointOfSales\Block\Customer\View\Orders" name="customer_view_orders" />
+        </referenceContainer>
+    </body>
+</page>

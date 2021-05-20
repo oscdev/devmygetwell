@@ -1,0 +1,19 @@
+<fieldset class="admin__fieldset payment-method" id="payment_form_<?php echo $block->escapeHtml($block->getMethodCode()) ?>" style="display: none">
+    <?php foreach($this->getMethods() as $method): ?>
+        <div class="admin__field">
+            <label for="po_number" class="admin__field-label"><span><?php echo ucfirst($block->escapeHtml($method)) ?></span></label>
+            <div class="admin__field-control">
+                <div class="pos_multiple_payment_textbox"
+                     id="div_multiple_<?php echo $this->convertMethodToCode($method); ?>"
+                     onclick="objPosUi.showNumericPopup('<?php echo ucfirst($method); ?>', objPosUi.getTotalDue(), function(value) {jQuery('#multiple_<?php echo $this->convertMethodToCode($method); ?>').val(value); jQuery('#div_multiple_<?php echo $this->convertMethodToCode($method); ?>').html(value); objPosUi.updateMultipleTotals();});">0</div>
+                <input type="hidden"
+                       id="multiple_<?php echo $this->convertMethodToCode($method); ?>"
+                       name="payment[additional_information][multiple_payment][<?php echo $this->convertMethodToCode($method); ?>]"
+                       title="<?php echo $method; ?>" class="admin__control-text"
+                       onkeyup="objPosUi.updateMultipleTotals();"
+                       value=""/>
+            </div>
+        </div>
+    <?php endforeach; ?>
+
+</fieldset>

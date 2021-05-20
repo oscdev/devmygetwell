@@ -1,0 +1,20 @@
+<table class="admin__table-primary dashboard-data">
+    <thead>
+    <tr>
+        <th class="data-grid-th  no-link col-customer"><span><?php echo __('Website'); ?></span></th>
+        <th class="data-grid-th  no-link col-customer"><span><?php echo __('Qty sellable'); ?></span></th>
+        <th class="data-grid-th  no-link col-items"><span><?php echo __('Backorders ?'); ?></span></th>
+        <th class="data-grid-th  no-link col-items"><span><?php echo __('Sellable'); ?></span></th>
+    </tr>
+    </thead>
+    <tbody>
+    <?php foreach($this->getRecords() as $item): ?>
+        <tr>
+            <td class=" col-customer "><?php echo $item->getName(); ?></td>
+            <td class=" a-center "><?php echo $item->getQty(); ?></td>
+            <td class=" a-center "><?php echo ($item->getBackorders() ? __('Yes') : __('No')); ?></td>
+            <td class=" a-center"><?php echo ($item->getstock_status() ? __('Yes') : __('No')); ?></td>
+        </tr>
+    <?php endforeach; ?>
+    </tbody>
+</table>

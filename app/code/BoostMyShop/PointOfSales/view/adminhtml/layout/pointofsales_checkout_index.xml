@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="pos-empty" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="content">
+            <block class="BoostMyShop\PointOfSales\Block\Checkout\Index" name="pointofsales.checkout.index">
+                <block class="BoostMyShop\PointOfSales\Block\Checkout\Search" name="pointofsales.checkout.search" />
+                <block class="BoostMyShop\PointOfSales\Block\Checkout\Products" name="pointofsales.checkout.products" />
+                <block class="BoostMyShop\PointOfSales\Block\Checkout\Totals" name="pointofsales.checkout.totals" />
+                <block class="BoostMyShop\PointOfSales\Block\Checkout\Payments" name="pointofsales.checkout.payments" />
+                <block class="BoostMyShop\PointOfSales\Block\Checkout\Shipping" name="pointofsales.checkout.shipping" />
+                <block class="BoostMyShop\PointOfSales\Block\Checkout\Customer" name="pointofsales.checkout.customer">
+                    <block class="BoostMyShop\PointOfSales\Block\Checkout\Customer\Tabs" name="pointofsales.checkout.customer.tabs" />
+                </block>
+                <block class="BoostMyShop\PointOfSales\Block\Checkout\Create" name="pointofsales.checkout.create" />
+                <block class="BoostMyShop\PointOfSales\Block\Checkout\Shortcuts" name="pointofsales.checkout.shortcuts" />
+                <block class="BoostMyShop\PointOfSales\Block\Checkout\EditProduct" name="pointofsales.checkout.editproduct" />
+
+            </block>
+        </referenceContainer>
+    </body>
+</page>

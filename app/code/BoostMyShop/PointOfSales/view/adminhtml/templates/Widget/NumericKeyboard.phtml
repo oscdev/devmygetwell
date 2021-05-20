@@ -1,0 +1,39 @@
+<div id="pos_numeric_popup" class="pos_numeric_popup" style="display:none;">
+
+
+
+    <center>
+        <table class="pos_numeric_grid">
+            <tr>
+                <td colspan="3">
+                    <div class="pos_numeric_popup_value" id="pos_numeric_popup_value"></div>
+                </td>
+            </tr>
+            <tr>
+                <td width="33%"><input type="button" value="7" class="button" onclick="objPosUi.numericPopupClick(this.value)"></td>
+                <td width="33%"><input type="button" value="8" class="button" onclick="objPosUi.numericPopupClick(this.value)"></td>
+                <td width="33%"><input type="button" value="9" class="button" onclick="objPosUi.numericPopupClick(this.value)"></td>
+            </tr>
+            <tr>
+                <td><input type="button" value="4" class="button" onclick="objPosUi.numericPopupClick(this.value)"></td>
+                <td><input type="button" value="5" class="button" onclick="objPosUi.numericPopupClick(this.value)"></td>
+                <td><input type="button" value="6" class="button" onclick="objPosUi.numericPopupClick(this.value)"></td>
+            </tr>
+            <tr>
+                <td><input type="button" value="1" class="button" onclick="objPosUi.numericPopupClick(this.value)"></td>
+                <td><input type="button" value="2" class="button" onclick="objPosUi.numericPopupClick(this.value)"></td>
+                <td><input type="button" value="3" class="button" onclick="objPosUi.numericPopupClick(this.value)"></td>
+            </tr>
+            <tr>
+                <td><input type="button" value="" id="pos_numeric_custom_button" class="button" onclick="objPosUi.numericPopupClick('pos_numeric_custom_button')"></td>
+                <td><input type="button" value="0" class="button" onclick="objPosUi.numericPopupClick(this.value)"></td>
+                <td><input type="button" value="." class="button" onclick="objPosUi.numericPopupClick(this.value)"></td>
+            </tr>
+            <tr>
+                <td><input type="button" value="Clear" class="button" onclick="objPosUi.numericPopupClick(this.value)"></td>
+                <td colspan="2"><input type="button" value="OK" class="button_selected" onclick="objPosUi.numericPopupClick(this.value)"></td>
+            </tr>
+        </table>
+    </center>
+
+</div>

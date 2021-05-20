@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2016 Oscprofessionals® All Rights Reserved
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Oscprofessionals_OscShop::oscshop" title="OscShop"
+             module="Oscprofessionals_OscShop" sortOrder="30"
+             resource="Oscprofessionals_OscShop::oscshop"/>
+
+        <add id="Oscprofessionals_OscShop::oscshop_country"
+             title="Advance Directory" module="Oscprofessionals_OscShop"
+             sortOrder="10" parent="Oscprofessionals_OscShop::oscshop"
+             action="oscshop/country/index"
+             resource="Oscprofessionals_OscShop::oscshop_country"/>
+
+       <!-- <add id="Oscprofessionals_OscShop::oscshop_appform"
+             title="Download APK" module="Oscprofessionals_OscShop"
+             sortOrder="20" parent="Oscprofessionals_OscShop::oscshop"
+             action="oscshop/appform/index"
+             resource="Oscprofessionals_OscShop::oscshop_appform"/>-->
+
+        <add id="Oscprofessionals_OscShop::token_settings"
+             title="Token Settings" module="Oscprofessionals_OscShop"
+             sortOrder="40" parent="Oscprofessionals_OscShop::oscshop"
+             action="adminhtml/system_config/edit/section/oscshop"
+             resource="Oscprofessionals_OscShop::token_settings"/>
+
+    </menu>
+</config>

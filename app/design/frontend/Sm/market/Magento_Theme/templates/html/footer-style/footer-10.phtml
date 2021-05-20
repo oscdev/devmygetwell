@@ -1,0 +1,76 @@
+<?php
+/**
+ * Copyright © 2016 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+
+$_config = $this->helper('Sm\Market\Helper\Data');
+?>
+
+<div class="footer-container footer-style-10">
+	<div class="footer-wrapper">
+		<div class="footer-top">
+			<div class="container">
+				<?php echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('footer-description')->toHtml(); ?>
+				<?php echo $block->getLayout()->createBlock('Magento\Framework\View\Element\Template')->setTemplate('Magento_Theme::html/social.phtml')->toHtml(); ?>
+			</div>
+		</div>
+		
+		<div class="footer-middle">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-3 col-sm-6 col-xs-12 contact-footer">
+						<?php echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('contact-footer')->toHtml(); ?>
+					</div>
+					
+					<div class="col-md-3 col-sm-6 col-xs-12 about-store">
+						<?php echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('about-footer')->toHtml(); ?>
+					</div>
+					
+					<div class="col-md-3 col-sm-6 col-xs-12 customer-services">
+						<?php echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('customer-services-footer')->toHtml(); ?>
+					</div>
+					
+					<div class="col-md-3 col-sm-6 col-xs-12 subscribe-footer">
+						<div class="footer-block">
+							<div class="footer-block-title">
+								<h3><?php echo __('sign up for newsletter')?></h3>
+							</div>
+							<div class="footer-block-content">
+								<p><?php echo __('Sign up for the latest news, exclusive offers and new arrivals ')?></p>
+								<?php echo $block->getChildHtml('form.subscribe.footer'); ?>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="footer-bottom">
+			<div class="container">
+				<div class="copyright-footer">
+					<?php if($_config->getAdvanced('custom_copyright')){ ?>
+						<address><?php echo $_config->getAdvanced('copyright_content') ?></address>
+					<?php } else {?>
+						<address><?php /* @escapeNotVerified */ echo $block->getCopyright() ?></address>
+					<?php } ?>
+				</div>
+				
+				<div class="footer-payment">
+					<?php echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('payment-footer')->toHtml(); ?>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<?php if($_config->getAdvanced('show_gototop')){ ?>
+		<a id="yt-totop" href="javascript:void(0)" title="Go to Top"></a>
+	<?php } ?>
+	
+</div>
+
+
+
+

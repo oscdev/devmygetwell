@@ -1,0 +1,79 @@
+<!--
+/**
+ * Callback
+ * 
+ * @author Slava Yurthev
+ */
+-->
+<?php /** @var $block Oscprofessionals\FranchiseEnquiry\Block\FranchiseEnquiry\Form */ ?>
+<?php
+$countryList=$block->getCountries();
+$regionList=$block->getRegion();  ?>
+<?php //if($this->isActive()): ?>
+	<div>
+		<div id="callback-modal">
+			<form data-mage-init='{"validation": {}}' action="<?php echo $this->getUrl('franchiseenquiry/index/save'); ?>" method="POST" id="callback-form">
+				<fieldset class="fieldset create info">
+					<legend class="legend"><span><?php echo __('Enquiry Form'); ?></span></legend><br>
+					<div class="field field-name-name required">
+						<label class="label" for="firstname">
+							<span><?php echo __('Name'); ?></span>
+						</label>
+						<div class="control">
+							<input type="text" id="name" name="name" value="<?php echo $this->getName(); ?>" title="<?php echo __('Name'); ?>" class="input-text required-entry" data-validate="{required:true}" autocomplete="off" aria-required="true">
+						</div>
+					</div>
+					<div class="field field-name-mobile required">
+						<label class="label" for="mobile">
+							<span><?php echo __('Mobile'); ?></span>
+						</label>
+						<div class="control">
+							<input type="text" id="mobile" name="mobile" value="<?php echo $this->getMobile(); ?>" title="<?php echo __('Mobile'); ?>" class="input-text required-entry validate-number" data-validate="{required:true}" autocomplete="off" aria-required="true">
+						</div>
+					</div>
+                    <div class="field field-name-email required">
+                        <label class="label" for="email">
+                            <span><?php echo __('Email'); ?></span>
+                        </label>
+                        <div class="control">
+                            <input type="text" id="email" name="email" value="<?php echo $this->getEmail(); ?>" title="<?php echo __('Email'); ?>" class="input-text required-entry validate-email" data-validate="{required:true}" autocomplete="off" aria-required="true">
+                        </div>
+                    </div>
+                    <div class="field field-name-states required">
+                        <label class="label" for="states">
+                            <span><?php echo __('State'); ?></span>
+                        </label>
+                        <div class="control">
+                                <?php echo $regionList?>
+                        </div>
+                    </div>
+                    <div class="field field-name-city required">
+                        <label class="label" for="city">
+                            <span><?php echo __('City'); ?></span>
+                        </label>
+                        <div class="control">
+                            <input type="text" id="city" name="city" value="<?php echo $this->getEmail(); ?>" title="<?php echo __('City'); ?>" class="input-text required-entry" data-validate="{required:true}" autocomplete="off" aria-required="true">
+                        </div>
+                    </div>
+                    <div class="field field-name-email required">
+                        <label class="label" for="comment">
+                            <span><?php echo __('Your Query/Comments'); ?></span>
+                        </label>
+                        <div class="control">
+                            <textarea type="text" id="comment" name="comment" value="<?php echo $this->getComment(); ?>" title="<?php echo __('Your Query/Comments'); ?>" class="input-text required-entry" data-validate="{required:true}" autocomplete="off" aria-required="true"></textarea>
+                        </div>
+                    </div>
+                    <?php echo $block->getChildHtml('form.additional.info'); ?>
+				</fieldset>
+				<div class=""></div>
+                <div class="actions-toolbar">
+                    <div class="primary">
+                        <button type="submit" title="<?php /* @escapeNotVerified */ echo __('Submit') ?>" class="action submit primary">
+                            <span><?php /* @escapeNotVerified */ echo __('Submit') ?></span>
+                        </button>
+                    </div>
+                </div>
+			</form>
+		</div>
+	</div>
+<?php //endif; ?>

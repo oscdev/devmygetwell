@@ -1,0 +1,78 @@
+
+<div id="product_edit_popup" class="pos-editproduct" style="display:none;">
+
+    <div class="page-main-actions">
+        <div class="page-actions">
+            <div class="page-actions-buttons">
+                <button class="action-primary" type="button" onclick="objPosCheckout.editProduct(jQuery('#edit_product_id').val(), jQuery('#edit_product_qty').val(), jQuery('#edit_product_price').val(), (jQuery('#edit_product_ship_later').prop('checked') ? 1 : 0))"><span>Done</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <table border="0" width="100%">
+        <tr>
+            <td valign="top" width="130"><img src="" id="edit_product_image" height="100" width="100" /></td>
+            <td valign="top">
+                <h2><span id="edit_product_title">A</span></h2>
+                <h2><span id="edit_product_sku">B</span></h2>
+
+                <div class="entry-edit form-inline">
+
+                    <fieldset class="fieldset admin__fieldset admin__fieldset" id="fieldset_edit_product">
+                        <legend class="admin__legend legend">
+                            <span>Main</span>
+                        </legend><br>
+
+                        <input type="hidden"
+                               id="edit_product_id"
+                               value=""/>
+
+                        <div class="admin__field field  ">
+                            <label class="label admin__field-label" for="customer_information_email"><span><?php echo __('Quantity'); ?></span></label>
+                            <div class="admin__field-control control">
+                                <div class="pos_multiple_payment_textbox"
+                                     id="edit_product_qty_div"
+                                     onclick="objPosUi.showNumericPopup('Edit product quantity', jQuery('#edit_product_qty').val(), function(value) {jQuery('#edit_product_qty').val(value); jQuery('#edit_product_qty_div').html(value);});">&nbsp;</div>
+                                <input type="hidden"
+                                       id="edit_product_qty"
+                                       value=""/>
+                            </div>
+                        </div>
+
+                        <div class="admin__field field ">
+                            <label class="label admin__field-label" for="customer_information_email"><span><?php echo __('Price'); ?></span></label>
+                            <div class="admin__field-control control">
+
+                                <div class="pos_multiple_payment_textbox"
+                                 id="edit_product_price_div"
+                                 onclick="objPosUi.showNumericPopup('Edit Price', jQuery('#edit_product_price').val(), function(value) {jQuery('#edit_product_price').val(value); jQuery('#edit_product_price_div').html(value);});">&nbsp;</div>
+                                <input type="hidden"
+                                       id="edit_product_price"
+                                       value=""/>
+                            </div>
+                        </div>
+
+                        <div class="admin__field field ">
+                            <label class="label admin__field-label"><span><?php echo __('Ship later'); ?></span></label>
+                            <div class="admin__field-control control">
+
+                                <div style="align-content: center; display: inline-block; margin-right: 20px;">
+                                    <input type="checkbox" style="display: none;" id="edit_product_ship_later" name="edit_product_ship_later" checked="">
+                                    <div id="div_edit_product_ship_later" style="margin: auto" class="switch-toggle-off" data-action="switch-toggle" data-checkbox-id="edit_product_ship_later"></div>
+
+                                </div>
+
+
+                            </div>
+                        </div>
+
+                    </fieldset>
+
+                </div>
+
+            </td>
+        </tr>
+    </table>
+
+</div>

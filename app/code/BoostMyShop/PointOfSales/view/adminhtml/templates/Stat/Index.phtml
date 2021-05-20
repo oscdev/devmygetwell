@@ -1,0 +1,58 @@
+<style>
+
+    .stat-table tr td
+    {
+        padding: 20px;
+    }
+
+</style>
+
+<form method="POST" id="frm_stat" action="<?php echo $this->getSubmitUrl(); ?>">
+
+    <input type="hidden" name="form_key" value="<?php echo $this->getFormKey(); ?>">
+
+    <div class="page-main-actions">
+        <div data-mage-init='{"floatingHeader": {}}' class="page-actions"  data-ui-id="page-actions-toolbar-content-header" >
+
+            <button id="zreport" title="zreport" type="button" class="action-default scalable primary" onclick="document.location.href='<?php echo $this->getZReportUrl(); ?>';"  data-ui-id="adminhtml-order-edit-save-button" >
+                <span><?php echo __('Print Z-Report'); ?></span>
+            </button>
+
+            <button id="save" title="save" type="button" class="action-default scalable primary" onclick="objPosUi.applyStatSettings();"  data-ui-id="adminhtml-order-edit-save-button" >
+                <span><?php echo __('Refresh'); ?></span>
+            </button>
+
+
+            <div class="admin__scope-old" style="float: right; padding-top: 15px; margin-right: 20px;">
+                <div class="product-actions">
+
+                    From <input type="text" name="stat[from]" value="<?php echo $this->getFromDate(); ?>">
+
+
+                    To <input type="text" name="stat[to]" value="<?php echo $this->getToDate(); ?>">
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div>
+
+        <table border="0" width="100%" cellpadding="20" cellspacing="20" class="stat-table">
+            <tr>
+                <td width="50%" valign="top"><?php echo $this->getChildHtml('pointofsales.stat.turnover'); ?></td>
+                <td width="50%" valign="top"><?php echo $this->getChildHtml('pointofsales.stat.payments'); ?></td>
+            </tr>
+            <tr>
+                <td width="50%" valign="top"><?php echo $this->getChildHtml('pointofsales.stat.bestsellers'); ?></td>
+                <td width="50%" valign="top"><?php echo $this->getChildHtml('pointofsales.stat.sellers'); ?></td>
+            </tr>
+        </table>
+
+
+    </div>
+
+</form>
+
+<div class="clear"></div>

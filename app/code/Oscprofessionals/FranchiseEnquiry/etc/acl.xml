@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * FranchiseEnquiry
+ * 
+ * @author Oscprofessionals
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Acl/etc/acl.xsd">
+	<acl>
+		<resources>
+			<resource id="Magento_Backend::admin">
+				<resource id="Oscprofessionals_FranchiseEnquiry::header" title="Franchise Enquiry Extension" sortOrder="0">
+					<resource id="Oscprofessionals_FranchiseEnquiry::requests" title="Requests" sortOrder="1"/>
+				</resource>
+			</resource>
+		</resources>
+	</acl>
+</config>

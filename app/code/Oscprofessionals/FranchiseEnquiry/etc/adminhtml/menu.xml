@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * FranchiseEnquiry
+ * 
+ * @author Oscprofessionals
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+	<menu>
+		<update id="Oscprofessionals::core"
+			 title="Oscprofessionals"
+			 module="Oscprofessionals_FranchiseEnquiry"
+			 sortOrder="9999"
+			 resource="Magento_Backend::content" />		
+		<add id="Oscprofessionals_FranchiseEnquiry::section"
+			 title="Franchise"
+			 module="Oscprofessionals_FranchiseEnquiry"
+			 sortOrder="1"
+			 parent="Oscprofessionals::core"
+			 resource="Oscprofessionals_FranchiseEnquiry::section" />
+		<add id="Oscprofessionals_FranchiseEnquiry::requests"
+			 title="Enquiry"
+			 module="Oscprofessionals_FranchiseEnquiry"
+			 sortOrder="1"
+			 parent="Oscprofessionals_FranchiseEnquiry::section"
+			 action="franchise_enquiry/requests"
+			 resource="Oscprofessionals_FranchiseEnquiry::requests" />
+	</menu>
+</config>

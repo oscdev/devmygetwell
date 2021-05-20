@@ -1,0 +1,33 @@
+<!--@subject New Franchise Enquiry for {{var city}} @-->
+
+{{template config_path="design/email/header_template"}}
+<table>
+    <tr class="email-information">
+        <td>
+            <table class="query-details">
+                <tr class="email-intro">
+                    <td>
+                        <p class="greeting">Hello</p>
+                        <p>A new Enquiry for Franchise as below</p>
+                        <p><b>Name of Applicant</b> {{var name}}</p>
+                        <p><b>Email Id</b> {{var email}}</p>
+                        <p><b>Contact Number</b> {{var mobile}}</p>
+                        <p><b>City</b> {{var city}}</p>
+                        <p><b>State</b> {{var region}}</p>
+                        <p><b>Message/Query</b> {{var comment}}</p>
+                        <p>    </p>
+                        <p>Please get back to this person and update in Record.</p>
+                        <p>   </p>
+                        <p>   </p>
+                        <p>Regards</p>
+                        <p>MyGetWellStore</p>
+                        <p>A  Unit of Bajaj Life Care</p>
+                        <p>www.mygetwellstore.com</p>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+
+{{template config_path="design/email/footer_template"}}

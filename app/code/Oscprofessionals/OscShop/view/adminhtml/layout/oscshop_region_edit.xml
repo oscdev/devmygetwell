@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2016 Oscprofessionals® All Rights Reserved
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="admin-2columns-left"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <update handle="editor"/>
+    <body>
+        <referenceContainer name="content">
+            <block class="Oscprofessionals\OscShop\Block\Adminhtml\Region\Edit"
+                   name="oscshop_region_edit"/>
+        </referenceContainer>
+        <referenceContainer name="left">
+            <block class="Oscprofessionals\OscShop\Block\Adminhtml\Region\Edit\Tabs"
+                   name="oscshop_region_edit_tabs" >
+                <block class="Oscprofessionals\OscShop\Block\Adminhtml\Region\Edit\Tab\RegionInformation"
+                       name="oscshop_region_edit_tab_regioninformation"/>
+                <action method="addTab">
+                    <argument name="name" xsi:type="string">regioninformation_section</argument>
+                    <argument name="block" xsi:type="string">oscshop_region_edit_tab_regioninformation</argument>
+                </action>
+            </block>
+        </referenceContainer>
+    </body>
+</page>

@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="pos-main" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <link src="BoostMyShop_PointOfSales::css/pos.css"/>
+    </head>
+    <body>
+        <referenceContainer name="content">
+            <block class="BoostMyShop\PointOfSales\Block\Root" name="pointofsales.main.root">
+                <block class="BoostMyShop\PointOfSales\Block\Menu" name="pointofsales.main.menu"/>
+                <block class="BoostMyShop\PointOfSales\Block\Header" name="pointofsales.main.header" />
+                <block class="BoostMyShop\PointOfSales\Block\Content" name="pointofsales.main.content" />
+
+                <block class="BoostMyShop\PointOfSales\Block\Checkout\Js" name="pointofsales.checkout.js">
+                    <block class="BoostMyShop\PointOfSales\Block\Checkout\Products\EmptyLayout" name="pointofsales.checkout.products.emptylayout" />
+                </block>
+
+                <block class="Magento\Backend\Block\Template" name="pointofsales.numerickeyboard" template="BoostMyShop_PointOfSales::Widget/NumericKeyboard.phtml" />
+
+            </block>
+        </referenceContainer>
+
+        <referenceContainer name="after.body.start">
+            <block class="Magento\RequireJs\Block\Html\Head\Config" name="requirejs-config"/>
+            <block class="Magento\Translation\Block\Html\Head\Config" name="translate-config"/>
+            <block class="Magento\Translation\Block\Js" name="translate" template="Magento_Translation::translate.phtml"/>
+            <block class="Magento\Framework\View\Element\Js\Components" name="head.components" as="components" template="Magento_Backend::page/js/components.phtml"/>
+            <block class="Magento\Framework\View\Element\Html\Calendar" name="head.calendar" as="calendar" template="Magento_Backend::page/js/calendar.phtml"/>
+        </referenceContainer>
+
+    </body>
+</page>

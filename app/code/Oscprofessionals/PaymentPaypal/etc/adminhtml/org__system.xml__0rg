@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2016 Oscprofessionals® All Rights Reserved
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="oscprofessionals" translate="label" sortOrder="200">
+            <label>Oscprofessionals</label>
+        </tab>
+        <section id="oscppaypal"
+                 translate="label"
+                 type="text"
+                 sortOrder="200"
+                 showInDefault="1"
+                 showInWebsite="1"
+                 showInStore="1">
+            <label>Paypal</label>
+            <tab>oscprofessionals</tab>
+            <resource>Oscprofessionals_PaymentPaypal::oscppaypal</resource>
+            <group id="paypalsettings"
+                   translate="label"
+                   type="text"
+                   sortOrder="10"
+                   showInDefault="1"
+                   showInWebsite="1"
+                   showInStore="1">
+                <label>Paypal Settings</label>
+                <field id="business_mail"
+                       translate="label"
+                       type="text"
+                       sortOrder="10"
+                       showInDefault="1"
+                       showInWebsite="1"
+                       showInStore="1">
+                    <label/>
+                    <frontend_model>Oscprofessionals\PaymentPaypal\Block\Adminhtml\System\Config\Select</frontend_model>
+                </field>
+                </group>
+        </section>
+    </system>
+</config>

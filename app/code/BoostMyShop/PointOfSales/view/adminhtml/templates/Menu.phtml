@@ -1,0 +1,27 @@
+<nav data-mage-init='{"globalNavigation": {}}' class="admin__menu" role="navigation">
+    <ul id="nav" role="menubar" >
+
+        <?php foreach($this->getItems() as $item): ?>
+
+        <li
+            data-ui-id="menu-magento-backend-<?php echo $item->getId(); ?>"
+            class="item-<?php echo $item->getId(); ?>    level-0"
+            id="menu-magento-backend-<?php echo $item->getId(); ?>"
+            aria-haspopup="true"
+            role="menu-item"
+            onclick="
+                <?php if ($item->getIsAjax()): ?>
+                    objPosUi.showScreen('<?php echo $item->getTitle(); ?>', '<?php echo $item->getUrl(); ?>')
+                <?php else: ?>
+                    document.location.href = '<?php echo $item->getUrl(); ?>';
+                <?php endif; ?>
+                "
+            >
+            <a href="#"  class="">
+                <span><?php echo $item->getTitle(); ?></span>
+            </a>
+        </li>
+
+        <?php endforeach; ?>
+    </ul>
+</nav>

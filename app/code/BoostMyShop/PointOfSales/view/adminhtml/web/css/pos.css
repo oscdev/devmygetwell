@@ -1,0 +1,450 @@
+.admin__menu .item-checkout > a:before
+{
+    content: '\e63f';
+}
+
+.admin__menu .item-payments > a:before
+{
+    content: '\e63e';
+}
+
+.admin__menu .item-settings > a:before
+{
+    content: '\e610';
+}
+
+.pos_checkout_main
+{
+    /*border: 1px solid red;*/
+    width: 100%;
+    height: 100%;
+}
+
+.pos_checkout_area_products
+{
+    /*border: 1px solid green;*/
+    position: absolute;
+    top: 0px;
+    bottom: 140px;
+    left: 40px;
+    right: 50px;
+    overflow: scroll;
+}
+
+.pos_checkout_area_totals
+{
+    /*border: 1px solid blue;*/
+    position: absolute;
+    bottom: 100px;
+    left: 40px;
+    right: 50px;
+}
+
+.pos_checkout_area_buttons
+{
+    position: absolute;
+    bottom: 40px;
+    left: 40px;
+    right: 50px;
+}
+
+.pos_product
+{
+    width: 48%;
+    height: 150px;
+    float: left;
+    background-color: #F2F2F2;
+    margin: 5px;
+    cursor: pointer;
+    position:relative;
+}
+
+.pos_product_sku
+{
+    font-size: 16px;
+    font-style: italic;
+}
+
+.pos_product_name
+{
+    font-size: 20px;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.pos_product_stock
+{
+
+}
+
+.pos_product_oos
+{
+    color: red;
+}
+
+.pos_shortcuts
+{
+    clear: both;
+    float: bottom;
+}
+
+.pos_bottom_zone
+{
+    width: 90%;
+    height: 50px;
+    border: solid 2px black;
+    font-size: 20px;
+    text-align: center;
+    background-color: #eb5202;
+    border-color: #eb5202;
+    color: #fff;
+    text-shadow: 1px 1px 0 rgba(0,0,0,0.25);
+    padding-top: 5px;
+    cursor: pointer;
+}
+
+.pos_product_image
+{
+    height: 90%;
+    margin: 10px;
+    float: left;
+}
+
+.pos_product_information
+{
+    float: top;
+    margin: 10px;
+}
+
+.pos_product_price
+{
+    float: right;
+    padding-right: 30px;
+    font-size: 24px;
+    color: red;
+}
+
+
+.pos_product_remove
+{
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    border: none;
+    color: #514943;
+    display: inline-block;
+    font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 1.4rem;
+    font-weight: 600;
+    content: '\e62f';
+    background-color: transparent;
+}
+
+.pos_product_checkout_details
+{
+    padding-top: 20px;
+
+}
+
+.pos_product_quantity_container
+{
+    float: left;
+}
+
+.pos_product_qty
+{
+    font-size: 24px;
+    height: 30px;
+    width: 50px;
+    text-align: center;
+}
+
+.pos_product_quantity_button
+{
+    background-color: white;
+    border-style: none;
+    font-size: 24px;
+    height: 30px;
+    width: 30px;
+}
+
+.pos_shipping_method_button, .pos_payment_method_button, .pos_store_button, .pos_user_button
+{
+    width: 90%;
+    height: 50px;
+    border: solid 2px #dddddd;
+    background-color: #dddddd;
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.pos_payment_method_button_selected, .pos_user_button_selected, .pos_store_button_selected
+{
+    background-color: coral;
+    border-color: coral;
+    color: #fff;
+}
+
+.pos-shipping-methods
+{
+    text-align: center;
+}
+
+
+
+
+.pos-product-search-item
+{
+    width: 30%;
+    height: 100px;
+
+    border: solid 2px black;
+    float: left;
+}
+
+.pos-product-search-item-information
+{
+    float: left;
+    margin: 10px;
+}
+
+.pos-product-search-item-image
+{
+    height: 90%;
+    margin: 10px;
+    float: left;
+}
+
+.pos-product-search-item-sku
+{
+    font-size: 16px;
+    font-style: italic;
+}
+
+.pos-product-search-item-name
+{
+    font-size: 20px;
+}
+
+.pos-product-search-item-price
+{
+    font-size: 20px;
+    float: right;
+}
+
+
+
+.pos-total-title
+{
+
+    font-size: 24px;
+}
+
+.pos-total-value
+{
+
+    font-size: 24px;
+    text-align: right;
+    padding-right: 20px;
+}
+
+.pos-time
+{
+    font-size: 30px;
+    float: right;
+    margin-left: 20px;
+}
+
+.header-item
+{
+    float: right;
+}
+
+.pos-button-user
+{
+    color: #41362f;
+    content: '\e600';
+    font-size: 3rem;
+    left: 1.1rem;
+    margin-top: -1.1rem;
+    position: absolute;
+    top: 50%;
+}
+
+.field-row
+{
+    display: block;
+    margin-bottom: 5px;
+}
+
+.field-row span
+{
+    width: 200px;
+}
+
+.entry-edit legend
+{
+    display: none;
+}
+
+.page-wrapper
+{
+    min-height: 100vh;
+}
+
+.page-content
+{
+    position: absolute;
+    top: 100px;
+    left: 100px;
+    right: 10px;
+    bottom: 10px;
+}
+
+.pos-content
+{
+    height: 100%;
+}
+
+.pos-icon
+{
+    color: #41362f;
+    font-family: 'Admin Icons';
+    font-size: 2.5rem;
+    height: 50px;
+    margin-left: 20px;
+    padding-top: 5px;
+    cursor: pointer;
+    margin-right: 20px;
+}
+
+.pos-grand-total
+{
+    float: right;
+    width: 300px;
+    font-width: bold;
+}
+
+
+.multiplepayment-total-cell
+{
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    width: 25%;
+}
+
+.multiplepayment-total-value
+{
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.field-row label
+{
+    float: left;
+    width: 40%;
+    padding-right: 20px;
+    font-weight: 600;
+    font-size: 1.4rem;
+    line-height: 3.2rem;
+}
+
+.field-row input
+{
+    width: 55%;
+}
+
+fieldset
+{
+    border: 0px;
+}
+
+.entry-edit h4
+{
+    display: none;
+}
+
+.select
+{
+    max-width: 50%;
+}
+
+
+/* VIRTUAL KEYBOARD */
+
+.pos_multiple_payment_textbox
+{
+    width: 100%;
+    border: 1px solid #333333;
+    padding: 4px;
+    cursor: pointer;
+    font-size: 2.1rem;
+}
+
+.pos_numeric_popup .button
+{
+    width: 100%;
+    height: 50px;
+    font-size: 20px;
+    text-align: center;
+    border: solid 2px #dddddd;
+    background-color: #dddddd;
+    color: #000000;
+    cursor: pointer;
+}
+
+.pos_numeric_popup .button_selected
+{
+    width: 100%;
+    height: 50px;
+    font-size: 20px;
+    text-align: center;
+    border: solid 2px coral;
+    background-color: coral;
+    color: #fff;
+    cursor: pointer;
+}
+
+.pos_numeric_popup_value
+{
+    font-size: 3rem;
+    text-align: center;
+    font-weight: 400;
+    width: 100%;
+    border: 1px solid black;
+    height: 40px;
+}
+
+.pos_numeric_grid
+{
+    width: 70%;
+}
+
+.pos_numeric_grid td
+{
+    padding: 20px;
+}
+
+.admin__field-label
+{
+    font-size: 2.1rem;
+}
+
+.switch-toggle-on
+{
+    width: 30px;
+    height: 20px;
+    background:url('../images/switch-on.png');
+    background-size: 30px 20px;
+}
+
+.switch-toggle-off
+{
+    width: 30px;
+    height: 20px;
+    background: url('../images/switch-off.png');
+    background-size: 30px 20px;
+}

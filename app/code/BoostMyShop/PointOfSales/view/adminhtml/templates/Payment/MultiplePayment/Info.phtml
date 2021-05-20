@@ -1,0 +1,15 @@
+<div class="order-payment-method-name"><?php echo $block->escapeHtml($block->getMethod()->getTitle()); ?></div>
+<table class="data-table admin__table-secondary">
+    <?php $total = 0; ?>
+    <?php foreach($block->getPayments() as $item): ?>
+        <tr>
+            <th><?php echo $block->escapeHtml($item->getMethod()); ?></th>
+            <td><?php echo $block->escapeHtml($item->getAmount()); ?></td>
+        </tr>
+        <?php $total += $item->getAmount(); ?>
+    <?php endforeach; ?>
+    <tr>
+        <th><b>Total</b></th>
+        <td><b><?php echo $block->escapeHtml($total); ?></b></td>
+    </tr>
+</table>

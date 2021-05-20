@@ -1,0 +1,38 @@
+<header class="page-header row">
+    <div class="page-header-hgroup col-l-4 col-m-6">
+        <div class="page-title-wrapper">
+            <h1 class="page-title" id="pos-page-title"></h1>
+        </div>
+    </div>
+
+    <div class="page-header-actions col-l-8 col-m-8">
+
+        <div id="store_popup" style="display:none;">
+            <?php foreach($this->getStores() as $store): ?>
+                <br><input type="button" id="button_store_<?php echo $store->getId(); ?>" class="pos_store_button" value="<?php echo $this->getStoreFullName($store); ?>" onclick="objPosCheckout.selectStore(<?php echo $store->getId(); ?>);">
+            <?php endforeach; ?>
+        </div>
+
+
+
+        <div id="user_popup" style="display:none;">
+            <?php foreach($this->getUsers() as $user): ?>
+                <br><input type="button" id="button_user_<?php echo $user->getId(); ?>" class="pos_user_button" value="<?php echo $user->getName(); ?>" onclick="objPosCheckout.selectUser(<?php echo $user->getId(); ?>);">
+            <?php endforeach; ?>
+        </div>
+
+        <div class="pos-time header-item" id="pos_time">-</div>
+
+        <div class="pos-icon header-item" onclick="objPosCheckout.showSearchProductPopup();">&#58892;</div>
+
+        <div class="pos-icon header-item" id="pos-icon-store" onclick="objPosCheckout.showStorePopup();">&#58893; <?php echo $this->getCurrentStoreName(); ?></div>
+
+        <div id="current_user" style="display: none;" class="header-item"></div>
+        <div class="pos-icon header-item" onclick="objPosCheckout.showUserPopup();">&#58880; <?php echo $this->getCurrentUserName(); ?></div>
+
+        <div class="header-item" id="pos_working"></div>
+
+    </div>
+
+</header>
+

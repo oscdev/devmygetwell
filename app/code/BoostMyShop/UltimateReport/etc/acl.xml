@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Acl/etc/acl.xsd">
+    <acl>
+        <resources>
+            <resource id="Magento_Backend::admin">
+                <resource id="BoostMyShop_Supplier::main_menu" title="menu">
+                    <resource id="BoostMyShop_Supplier::operations" title="oprat">
+                        <resource id="BoostMyShop_UltimateReport::supplier_dashboard" title="Dashboard" />
+                    </resource>
+                </resource>
+                <resource id="Magento_Sales::sales" title="sales">
+                    <resource id="BoostMyShop_OrderPreparation::operations" title="sales oprat">
+                        <resource id="BoostMyShop_UltimateReport::orderpreparation_dashboard" title="Dashboard" />
+                    </resource>
+                </resource>
+                <resource id="BoostMyShop_Erp::main_menu" title="main menu">
+                    <resource id="BoostMyShop_Erp::home" title="erp home">
+                        <resource id="BoostMyShop_UltimateReport::erp_dashboard" title="Dashboard" />
+                    </resource>
+                </resource>
+            </resource>
+        </resources>
+    </acl>
+</config>
